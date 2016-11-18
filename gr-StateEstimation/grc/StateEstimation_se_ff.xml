@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<block>
+  <name>State Estimation WLS</name>
+  <key>StateEstimation_se_ff</key>
+  <category>WLS</category>
+  <import>import StateEstimation</import>
+  <make>StateEstimation.se_ff($size,$smp_rate)</make>
+  <param>
+    <name>Vector size</name>
+    <key>size</key>
+    <value>512</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Sample rate</name>
+    <key>smp_rate</key>
+    <value>400000</value>
+    <type>int</type>
+  </param>
+  
+  <sink>
+    <name>in</name>
+    <type>float</type>
+    <vlen>$size</vlen>
+  </sink>
+  
+  <source>
+    <name>WLS_output</name>
+    <type>float</type>
+  </source>
+</block>
